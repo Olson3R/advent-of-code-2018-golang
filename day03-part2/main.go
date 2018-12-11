@@ -1,20 +1,20 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
 	"strconv"
 	"strings"
 	"unicode"
 )
 
 type Box struct {
-	id int
+	id     int
 	xBegin int
-	xEnd int
+	xEnd   int
 	yBegin int
-	yEnd int
+	yEnd   int
 }
 
 func check(e error) {
@@ -37,7 +37,7 @@ func strip(str string) string {
 
 func overlap(a Box, b Box) bool {
 	if a.xBegin <= b.xEnd && a.xEnd >= b.xBegin &&
-			a.yBegin <= b.yEnd && a.yEnd >= b.yBegin {
+		a.yBegin <= b.yEnd && a.yEnd >= b.yBegin {
 		return true
 	}
 	return false
@@ -71,7 +71,7 @@ func parseRow(row string) (int, int, int, int, int) {
 }
 
 func main() {
-	file, err := os.Open("d3-data.txt")
+	file, err := os.Open("input/d03-input.txt")
 	check(err)
 	defer file.Close()
 
@@ -87,14 +87,13 @@ func main() {
 	}
 
 	for boxIndex, box := range boxes {
-		for _, otherBox := range boxes[boxIndex + 1:] {
+		for _, otherBox := range boxes[boxIndex+1:] {
 			if overlap(box, otherBox) {
 				boxOverlaps[box.id] = true
 				boxOverlaps[otherBox.id] = true
 			}
 		}
 	}
-
 
 	for id, overlaps := range boxOverlaps {
 		if !overlaps {

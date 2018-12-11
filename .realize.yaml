@@ -1,0 +1,164 @@
+settings:
+  files:
+    outputs:
+      status: false
+      path: ""
+      name: .r.outputs.log
+    logs:
+      status: false
+      path: ""
+      name: .r.logs.log
+    errors:
+      status: false
+      path: ""
+      name: .r.errors.log
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: d01-part1
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day01-part1/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d01-part2
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day01-part2/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d02-part1
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day02-part1/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d02-part2
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day02-part2/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d03-part1
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day03-part1/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d03-part2
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day03-part2/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d06-part1
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day06-part1/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor

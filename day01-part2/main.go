@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
 	"strconv"
 )
 
@@ -14,7 +14,7 @@ func check(e error) {
 }
 
 func main() {
-	file, err := os.Open("d1-data.txt")
+	file, err := os.Open("input/d01-input.txt")
 	check(err)
 	defer file.Close()
 

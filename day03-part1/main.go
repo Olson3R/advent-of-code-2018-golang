@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
 	"strconv"
 	"strings"
 	"unicode"
@@ -55,7 +55,7 @@ func parseRow(row string) (int, int, int, int) {
 }
 
 func main() {
-	file, err := os.Open("d3-data.txt")
+	file, err := os.Open("input/d03-input.txt")
 	check(err)
 	defer file.Close()
 
@@ -66,8 +66,8 @@ func main() {
 		row := stripWhitespace(scanner.Text())
 		x, y, width, height := parseRow(row)
 		fmt.Println("x: ", x, ", y: ", y, ", width: ", width, ", height: ", height)
-		for i := x + 1; i <= x + width; i++ {
-			for j := y + 1; j <= y + height; j++ {
+		for i := x + 1; i <= x+width; i++ {
+			for j := y + 1; j <= y+height; j++ {
 				coord := Coord{i, j}
 				count, ok := coords[coord]
 				if ok {
@@ -82,7 +82,6 @@ func main() {
 	overlapCount := 0
 	for _, value := range coords {
 		if value > 1 {
-			fmt.Println("V: ", value)
 			overlapCount += 1
 		}
 	}

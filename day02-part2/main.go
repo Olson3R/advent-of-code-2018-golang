@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
 )
 
 func check(e error) {
@@ -13,7 +13,7 @@ func check(e error) {
 }
 
 func main() {
-	file, err := os.Open("d2-data.txt")
+	file, err := os.Open("input/d02-input.txt")
 	check(err)
 	defer file.Close()
 
@@ -25,10 +25,10 @@ func main() {
 	}
 
 	for boxIndex, box := range boxes {
-		for idIndex, _ := range box {
-			testId := box[:idIndex] + box[idIndex + 1:]
-			for _, otherBox := range boxes[boxIndex + 1:] {
-				if testId == otherBox[:idIndex] + otherBox[idIndex + 1:] {
+		for idIndex := range box {
+			testId := box[:idIndex] + box[idIndex+1:]
+			for _, otherBox := range boxes[boxIndex+1:] {
+				if testId == otherBox[:idIndex]+otherBox[idIndex+1:] {
 					fmt.Println("ID: ", testId)
 					fmt.Println("BOX ID: ", box)
 					fmt.Println("OTHER ID: ", otherBox)

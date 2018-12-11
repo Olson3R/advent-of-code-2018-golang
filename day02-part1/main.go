@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
 	"strings"
 )
 
@@ -14,7 +14,7 @@ func check(e error) {
 }
 
 func main() {
-	file, err := os.Open("d2-data.txt")
+	file, err := os.Open("input/d02-input.txt")
 	check(err)
 	defer file.Close()
 
@@ -52,5 +52,5 @@ func main() {
 
 	fmt.Println("two letter: ", two_letter_count)
 	fmt.Println("three letter: ", three_letter_count)
-	fmt.Println("Checksum: ", two_letter_count * three_letter_count)
+	fmt.Println("Checksum: ", two_letter_count*three_letter_count)
 }
