@@ -1,23 +1,23 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"bufio"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
-	"regexp"
 )
 
 type Guard struct {
-	id int
-	asleep *[60]int
+	id     int
+	asleep []int
 }
 
 func AddSleepPeriod(g *Guard, start int, end int) {
 	for i := start; i < end; i++ {
-		fmt.Println("WWW", i, g.asleep[i] + 1)
+		fmt.Println("WWW", i, g.asleep[i]+1)
 		g.asleep[i] = g.asleep[i] + 1
 	}
 }
@@ -56,7 +56,7 @@ func parseMinutes(time string) int {
 }
 
 func main() {
-	file, err := os.Open("d4-input.txt")
+	file, err := os.Open("input/d04-input.txt")
 	check(err)
 	defer file.Close()
 
@@ -77,7 +77,7 @@ func main() {
 		if guardId > 0 {
 			guardRef, ok := guards[guardId]
 			if !ok {
-				newGuard := Guard{ guardId, &[60]int{} }
+				newGuard := Guard{guardId, make([]int, 60)}
 				guards[guardId] = &newGuard
 				guard = newGuard
 			} else {
@@ -92,8 +92,7 @@ func main() {
 		}
 	}
 
-
 	for _, guardRef := range guards {
-		fmt.Println(*guardRef.asleep)
+		fmt.Println(guardRef.asleep)
 	}
 }
