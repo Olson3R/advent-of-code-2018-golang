@@ -144,13 +144,13 @@ func main() {
 	}
 
 	for y := minY; y <= maxY; y++ {
-		// top row
+		// left column
 		name := grid[Coordinate{y, minX}]
 		if name != STAR {
 			infiniteLocations[name] = true
 		}
 
-		// bottom row
+		// right column
 		name = grid[Coordinate{y, maxX}]
 		if name != STAR {
 			infiniteLocations[name] = true
