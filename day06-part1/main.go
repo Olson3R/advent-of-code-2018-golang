@@ -98,6 +98,7 @@ func main() {
 	minY := -1
 	maxY := -1
 
+	// parse and save locations along with finding min/max X/Y
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		row := strip(scanner.Text())
@@ -117,6 +118,8 @@ func main() {
 		}
 	}
 
+
+	// find the closest location for each coordinate
 	for x := minX; x <= maxX; x++ {
 		for y := minY; y <= maxY; y++ {
 			coordinate := Coordinate{x, y}
@@ -127,7 +130,7 @@ func main() {
 		}
 	}
 
-	// find infinite locations to ignore
+	// find infinite locations to ignore by getting locations touching the edges
 	infiniteLocations := make(map[string]bool)
 	for x := minX; x <= maxX; x++ {
 		// top row
@@ -157,6 +160,7 @@ func main() {
 		}
 	}
 
+	// compute sizes of each location
 	sizes := make(map[string]int)
 	for _, location := range locations {
 		sizes[location.name] = 0
@@ -168,6 +172,7 @@ func main() {
 		}
 	}
 
+	// find largest location
 	largest := 0
 	for name, size := range sizes {
 		_, ok := infiniteLocations[name]
