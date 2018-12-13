@@ -8,11 +8,6 @@ import (
 	"strings"
 )
 
-type Step struct {
-	name          string
-	requiredSteps []string
-}
-
 func check(e error) {
 	if e != nil {
 		panic(e)
