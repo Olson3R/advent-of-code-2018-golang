@@ -267,3 +267,24 @@ schema:
     - .git
     - .realize
     - vendor
+
+- name: d08-part2
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day08-part2/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
