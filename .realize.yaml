@@ -330,3 +330,45 @@ schema:
     - .git
     - .realize
     - vendor
+
+- name: d10-part1
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day10/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+
+- name: d10-part2
+  path: /Users/scottolson/projects/advent-of-code-2018-golang/day10/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
