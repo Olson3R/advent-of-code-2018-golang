@@ -498,3 +498,24 @@ schema:
     - .git
     - .realize
     - vendor
+
+- name: d14-part1
+  path: /users/scotto/Documents/go/advent-of-code-2018-golang/day14-part1/
+  commands:
+    vet:
+      status: true
+    fmt:
+      status: true
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
